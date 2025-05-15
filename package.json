@@ -14,6 +14,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/express": "^5.0.1",
     "@types/pg": "^8.11.8",
     "nodemon": "^3.1.10",
     "pg": "^8.12.0",
@@ -27,6 +28,7 @@
     "@langchain/core": "^0.3.55",
     "@langchain/google-webauth": "^0.2.7",
     "@langchain/langgraph": "^0.2.69",
-    "axios": "^1.9.0"
+    "axios": "^1.9.0",
+    "express": "^5.1.0"
   }
 }

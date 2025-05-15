@@ -34,8 +34,7 @@ const agent = createReactAgent({
 
 
 export const executeAgent = async (message: string) => {
-    const formattedSystemPromptString = await SYSTEM_PROMPT.format({});
-    const systemMessage = new SystemMessage(formattedSystemPromptString);
+    const systemMessage = new SystemMessage(SYSTEM_PROMPT);
 
     console.log('Attempting agent invoke with recursion limit: 50');
     const result = await agent.invoke(

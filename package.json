@@ -14,14 +14,15 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/pg": "^8.11.8",
     "nodemon": "^3.1.10",
+    "pg": "^8.12.0",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.8.3",
-    "pg": "^8.12.0",
-    "@types/pg": "^8.11.8"
+    "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@google-cloud/bigquery": "^8.0.0",
     "@langchain/community": "^0.3.42",
     "@langchain/core": "^0.3.55",
     "@langchain/google-webauth": "^0.2.7",

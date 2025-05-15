@@ -1,6 +1,6 @@
 import { DynamicTool } from "@langchain/core/tools";
-import { chainTablesSchemas, protocolTablesSchemas } from "./schemas";
-import { sendQuery } from "./db";
+import { chainTablesSchemas, protocolTablesSchemas } from "./schemas.js";
+import { sendQuery } from "./db.js";
 
 export const chainTablesAvailableTool = () => new DynamicTool({
     name: "chainTablesAvailable",
@@ -65,8 +65,8 @@ export const chainTablesAvailableTool = () => new DynamicTool({
     }
 });
 
-export const chainProtocolTablesAvailableTool = () => new DynamicTool({
-    name: "chainProtocolTablesAvailable",
+export const protocolTablesAvailableTool = () => new DynamicTool({
+    name: "protocolTablesAvailable",
     description: `Check all the tables available on the chain protocol bigquery dataset NO INPUT REQUIRED`,
     func: async (input: string) => {
         return JSON.stringify({
@@ -454,40 +454,52 @@ export const chainTablesSchemaTool = () => new DynamicTool({
     description: `Return the schema of a table on the chain bigquery dataset.Required input: table name Example input: "addresses"`,
     func: async (input: string) => {
         try {
-            const table = input.trim();
+            const table = input.trim() as keyof typeof chainTablesSchemas;
+
+            console.log(`Calling chainTablesSchemaTool with table: ${table}`);
+
             if (!table) {
-                return { error: "Table name is required" };
+                return JSON.stringify({ error: "Table name is required" });
             }
 
             const schema = chainTablesSchemas[table];
+            if (!schema) {
+                return JSON.stringify({ error: `Schema not found for chain table: ${table}` });
+            }
             return JSON.stringify({
                 schema: schema,
             });
         } catch (error) {
-            console.error(`Error calling ChainTables API: ${error}`);
-            return { error: "Failed to call ChainTables API" };
+            console.error(`Error in chainTablesSchemaTool for table "${input}": ${error}`);
+            return JSON.stringify({ error: "Failed to retrieve chain table schema" });
         }
     }
 });
 
 
-export const chainProtocolTablesSchemaTool = () => new DynamicTool({
-    name: "chainProtocolTablesSchema",
-    description: `Return the schema of a table on the chain bigquery dataset.Required input: table name Example input: "addresses"`,
+export const protocolTablesSchemaTool = () => new DynamicTool({
+    name: "protocolTablesSchema",
+    description: `Return the schema of a table on the chain protocol bigquery dataset.Required input: table name Example input: "addresses"`,
     func: async (input: string) => {
         try {
-            const table = input.trim();
+            const table = input.trim() as keyof typeof protocolTablesSchemas;
+
+            console.log(`Calling protocolTablesSchemaTool with table: ${table}`);
+
             if (!table) {
-                return { error: "Table name is required" };
+                return JSON.stringify({ error: "Table name is required" });
             }
 
             const schema = protocolTablesSchemas[table];
+            if (!schema) {
+                return JSON.stringify({ error: `Schema not found for protocol table: ${table}` });
+            }
             return JSON.stringify({
                 schema: schema,
             });
         } catch (error) {
-            console.error(`Error calling ChainTables API: ${error}`);
-            return { error: "Failed to call ChainTables API" };
+            console.error(`Error in protocolTablesSchemaTool for table "${input}": ${error}`);
+            return JSON.stringify({ error: "Failed to retrieve protocol table schema" });
         }
     }
 });
@@ -499,15 +511,17 @@ export const executeQueryTool = () => new DynamicTool({
     func: async (input: string) => {
         try {
             const query = input.trim();
+
+            console.log(`Calling executeQueryTool with query: ${query}`);
             if (!query) {
                 return { error: "Query is required" };
             }
 
             const result = await sendQuery(query);
-            return JSON.stringify({
-                result: result,
-            });
+            return JSON.stringify({result: result });
         } catch (error) {
             console.error(`Error calling ChainTables API: ${error}`);
+            return { error: "Failed to execute query" };
+        }
     }
 });

@@ -1,12 +1,12 @@
 import { createReactAgent } from '@langchain/langgraph/prebuilt';
 import { ChatGoogle } from "@langchain/google-webauth";
-import { HumanMessage } from '@langchain/core/messages';
-import { SYSTEM_PROMPT } from './prompt';
+import { HumanMessage, SystemMessage } from '@langchain/core/messages';
+import { SYSTEM_PROMPT } from './prompt.js';
 import dotenv from 'dotenv';
 import {
     executeQueryTool,
-    chainProtocolTablesAvailableTool,
-    chainProtocolTablesSchemaTool,
+    protocolTablesAvailableTool,
+    protocolTablesSchemaTool,
     chainTablesAvailableTool,
     chainTablesSchemaTool
 } from './tools.js';
@@ -25,18 +25,22 @@ const agent = createReactAgent({
     llm,
     tools: [
         executeQueryTool(),
-        chainProtocolTablesAvailableTool(),
-        chainProtocolTablesSchemaTool(),
+        protocolTablesAvailableTool(),
+        protocolTablesSchemaTool(),
         chainTablesAvailableTool(),
         chainTablesSchemaTool()
     ],
-    messageModifier: SYSTEM_PROMPT,
 });
 
 
 export const executeAgent = async (message: string) => {
-    const result = await agent.invoke({
-        messages: [new HumanMessage(message)],
-    });
+    const formattedSystemPromptString = await SYSTEM_PROMPT.format({});
+    const systemMessage = new SystemMessage(formattedSystemPromptString);
+
+    console.log('Attempting agent invoke with recursion limit: 50');
+    const result = await agent.invoke(
+        { messages: [systemMessage, new HumanMessage(message)] },
+        { configurable: {}, recursionLimit: 50 }
+    );
     return result;
 };

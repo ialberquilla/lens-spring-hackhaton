@@ -249,7 +249,7 @@ export const chainTablesSchemas = {
 
 
 export const protocolTablesSchemas = {
-    "account_acted": {
+    "account.acted": {
       "name": "account.acted",
       "description": "Records actions performed by accounts on posts. Previous was publication.open_action_module_acted_record in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.acted` LIMIT 1;",
@@ -268,7 +268,7 @@ export const protocolTablesSchemas = {
         { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "account_action_config": {
+    "account.action_config": {
       "name": "account.action_config",
       "description": "Stores action configurations for accounts.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.action_config` LIMIT 1;",
@@ -290,7 +290,7 @@ export const protocolTablesSchemas = {
         { "name": "app", "type": "bytea", "description": "App identifier" }
       ]
     },
-    "account_action_executed": {
+    "account.action_executed": {
       "name": "account.action_executed",
       "description": "Logs executed actions by accounts.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.action_executed` LIMIT 1;",
@@ -308,7 +308,7 @@ export const protocolTablesSchemas = {
         { "name": "by_account", "type": "bytea", "description": "Account that executed the action" }
       ]
     },
-    "account_action_executed_by_account_count": {
+    "account.action_executed_by_account_count": {
       "name": "account.action_executed_by_account_count",
       "description": "Counts actions executed by specific accounts.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.action_executed_by_account_count` LIMIT 1;",
@@ -319,7 +319,7 @@ export const protocolTablesSchemas = {
         { "name": "total", "type": "integer", "description": "Total count of executions" }
       ]
     },
-    "account_action_executed_count": {
+    "account.action_executed_count": {
       "name": "account.action_executed_count",
       "description": "Counts actions executed on specific accounts.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.action_executed_count` LIMIT 1;",
@@ -330,7 +330,7 @@ export const protocolTablesSchemas = {
         { "name": "total", "type": "integer", "description": "Total count of executions" }
       ]
     },
-    "account_action_metadata": {
+    "account.action_metadata": {
       "name": "account.action_metadata",
       "description": "Stores metadata for account actions.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.action_metadata` LIMIT 1;",
@@ -346,7 +346,7 @@ export const protocolTablesSchemas = {
         { "name": "created_on", "type": "timestamp with time zone", "description": "Creation time" }
       ]
     },
-    "account_blocked": {
+    "account.blocked": {
       "name": "account.blocked",
       "description": "Records blocked accounts. Previous was profile.blocked in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.blocked` LIMIT 1;",
@@ -360,7 +360,7 @@ export const protocolTablesSchemas = {
         { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "account_bookmarked_post": {
+    "account.bookmarked_post": {
       "name": "account.bookmarked_post",
       "description": "Stores posts bookmarked by accounts. Previous was personalisation.bookmarked_publication in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.bookmarked_post` LIMIT 1;",
@@ -371,7 +371,7 @@ export const protocolTablesSchemas = {
         { "name": "created_at", "type": "timestamp with time zone", "description": "Bookmark time" }
       ]
     },
-    "account_follow_rule_config": {
+    "account.follow_rule_config": {
       "name": "account.follow_rule_config",
       "description": "Configurations for follow rules.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.follow_rule_config` LIMIT 1;",
@@ -390,7 +390,7 @@ export const protocolTablesSchemas = {
         { "name": "last_updated_sequence_id", "type": "numeric", "description": "Last update sequence ID" }
       ]
     },
-    "account_follow_rule_selector": {
+    "account.follow_rule_selector": {
       "name": "account.follow_rule_selector",
       "description": "Selectors for follow rules.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.follow_rule_selector` LIMIT 1;",
@@ -407,7 +407,7 @@ export const protocolTablesSchemas = {
         { "name": "rule_address", "type": "bytea", "description": "Rule address" }
       ]
     },
-    "account_follower": {
+    "account.follower": {
       "name": "account.follower",
       "description": "Records follower relationships. Previous was profile.follower in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.follower` LIMIT 1;",
@@ -424,7 +424,7 @@ export const protocolTablesSchemas = {
         { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "account_follower_summary": {
+    "account.follower_summary": {
       "name": "account.follower_summary",
       "description": "Summarizes follower statistics. Previous was global_stats.profile_follower in Lens V2. Corresponding clustered table account.follower_summary_clustered_by_account is available for better performance on account column.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.follower_summary` LIMIT 1;",
@@ -437,7 +437,7 @@ export const protocolTablesSchemas = {
         { "name": "updated_at", "type": "timestamp with time zone", "description": "Last update time" }
       ]
     },
-    "account_known_smart_wallet": {
+    "account.known_smart_wallet": {
       "name": "account.known_smart_wallet",
       "description": "Records known smart wallets.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.known_smart_wallet` LIMIT 1;",
@@ -453,7 +453,7 @@ export const protocolTablesSchemas = {
         { "name": "last_updated_sequence_id", "type": "numeric", "description": "Last update sequence ID" }
       ]
     },
-    "account_manager": {
+    "account.manager": {
       "name": "account.manager",
       "description": "Records account managers. Previous was profile.manager in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.manager` LIMIT 1;",
@@ -474,7 +474,7 @@ export const protocolTablesSchemas = {
         { "name": "last_updated_sequence_id", "type": "numeric", "description": "Last update sequence ID" }
       ]
     },
-    "account_metadata": {
+    "account.metadata": {
       "name": "account.metadata",
       "description": "Stores account metadata. Previous was profile.metadata in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.metadata` LIMIT 1;",
@@ -490,7 +490,7 @@ export const protocolTablesSchemas = {
         { "name": "app", "type": "bytea", "description": "App identifier" }
       ]
     },
-    "account_notification": {
+    "account.notification": {
       "name": "account.notification",
       "description": "Stores account notifications. Previous was notification.record in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.notification` LIMIT 1;",
@@ -512,7 +512,7 @@ export const protocolTablesSchemas = {
         { "name": "feed", "type": "bytea", "description": "Feed identifier" }
       ]
     },
-    "account_peer_to_peer_recommendation": {
+    "account.peer_to_peer_recommendation": {
       "name": "account.peer_to_peer_recommendation",
       "description": "Records peer-to-peer account recommendations. Previous was profile.peer_to_peer_recommendation in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.peer_to_peer_recommendation` LIMIT 1;",
@@ -523,7 +523,7 @@ export const protocolTablesSchemas = {
         { "name": "created_at", "type": "timestamp with time zone", "description": "Recommendation time" }
       ]
     },
-    "account_post_summary": {
+    "account.post_summary": {
       "name": "account.post_summary",
       "description": "Summarizes post statistics for accounts. Previous was global_stats.profile in Lens V2. Corresponding clustered table account.post_summary_clustered_by_account is available for better performance on account column. Repost/Mirros are not migrated from Lens V2. Total_reposts may not represent the actual numbers from Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.post_summary` LIMIT 1;",
@@ -543,7 +543,7 @@ export const protocolTablesSchemas = {
         { "name": "total_tips", "type": "integer", "description": "Total tips" }
       ]
     },
-    "account_reacted_summary": {
+    "account.reacted_summary": {
       "name": "account.reacted_summary",
       "description": "Summarizes reactions by account. Previous was global_stats.profile_reacted in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.reacted_summary` LIMIT 1;",
@@ -554,7 +554,7 @@ export const protocolTablesSchemas = {
         { "name": "total", "type": "integer", "description": "Total count" }
       ]
     },
-    "account_reaction_summary": {
+    "account.reaction_summary": {
       "name": "account.reaction_summary",
       "description": "Summarizes reactions on account content. Previous was global_stats.profile_reaction in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.reaction_summary` LIMIT 1;",
@@ -565,7 +565,7 @@ export const protocolTablesSchemas = {
         { "name": "total", "type": "integer", "description": "Total count" }
       ]
     },
-    "account_universal_action_config": {
+    "account.universal_action_config": {
       "name": "account.universal_action_config",
       "description": "Stores universal action configurations.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.universal_action_config` LIMIT 1;",
@@ -580,7 +580,7 @@ export const protocolTablesSchemas = {
         { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "account_username_assigned": {
+    "account.username_assigned": {
       "name": "account.username_assigned",
       "description": "Records username assignments. Previous was namespace.handle_link in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.account.username_assigned` LIMIT 1;",
@@ -596,7 +596,7 @@ export const protocolTablesSchemas = {
         { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "app_account_post_summary": {
+    "app.account_post_summary": {
       "name": "app.account_post_summary",
       "description": "Summarizes post statistics for accounts by app. Previous was app_stats.profile in Lens V2. Repost/Mirros are not migrated from Lens V2. Total_reposts may not represent the actual numbers from Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.account_post_summary` LIMIT 1;",
@@ -617,7 +617,7 @@ export const protocolTablesSchemas = {
           { "name": "total_tips", "type": "integer", "description": "Total tips" }
       ]
     },
-    "app_account_reacted_summary": {
+    "app.account_reacted_summary": {
       "name": "app.account_reacted_summary",
       "description": "Summarizes reactions by account per app. Previous was app_stats.profile_reacted in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.account_reacted_summary` LIMIT 1;",
@@ -629,7 +629,7 @@ export const protocolTablesSchemas = {
           { "name": "total", "type": "integer", "description": "Total count" }
       ]
     },
-    "app_account_reaction_summary": {
+    "app.account_reaction_summary": {
       "name": "app.account_reaction_summary",
       "description": "Summarizes reactions on account content per app.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.account_reaction_summary` LIMIT 1;",
@@ -641,7 +641,7 @@ export const protocolTablesSchemas = {
           { "name": "total", "type": "integer", "description": "Total count" }
       ]
     },
-    "app_feed": {
+    "app.feed": {
       "name": "app.feed",
       "description": "Records app feeds.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.feed` LIMIT 1;",
@@ -656,7 +656,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "app_group": {
+    "app.group": {
       "name": "app.group",
       "description": "Records app groups.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.group` LIMIT 1;",
@@ -671,7 +671,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "app_metadata": {
+    "app.metadata": {
       "name": "app.metadata",
       "description": "Stores app metadata.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.metadata` LIMIT 1;",
@@ -690,7 +690,7 @@ export const protocolTablesSchemas = {
           { "name": "created_on", "type": "timestamp with time zone", "description": "Creation time" }
       ]
     },
-    "app_post_feed_tag_summary": {
+    "app.post_feed_tag_summary": {
       "name": "app.post_feed_tag_summary",
       "description": "Summarizes post tags by feed and app.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.post_feed_tag_summary` LIMIT 1;",
@@ -702,7 +702,7 @@ export const protocolTablesSchemas = {
           { "name": "total", "type": "integer", "description": "Total count" }
       ]
     },
-    "app_post_reaction_summary": {
+    "app.post_reaction_summary": {
       "name": "app.post_reaction_summary",
       "description": "Summarizes post reactions by app. Previous was app_stats.publication_reaction in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.post_reaction_summary` LIMIT 1;",
@@ -714,7 +714,7 @@ export const protocolTablesSchemas = {
           { "name": "total", "type": "integer", "description": "Total count" }
       ]
     },
-    "app_post_summary": {
+    "app.post_summary": {
       "name": "app.post_summary",
       "description": "Summarizes post statistics by app. Previous was app_stats.publication in Lens V2. Repost/Mirros are not migrated from Lens V2. Total_reposts may not represent the actual numbers from Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.post_summary` LIMIT 1;",
@@ -741,7 +741,7 @@ export const protocolTablesSchemas = {
           { "name": "total_amount_of_tips_by_flagged_accounts", "type": "integer", "description": "Tips by flagged accounts" }
       ]
     },
-    "app_post_tag_summary": {
+    "app.post_tag_summary": {
       "name": "app.post_tag_summary",
       "description": "Summarizes post tags by app. Previous was app_stats.publication_tag in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.post_tag_summary` LIMIT 1;",
@@ -752,7 +752,7 @@ export const protocolTablesSchemas = {
           { "name": "total", "type": "integer", "description": "Total count" }
       ]
     },
-    "app_record": {
+    "app.record": {
       "name": "app.record",
       "description": "Stores app records.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.record` LIMIT 1;",
@@ -777,7 +777,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "app_signer": {
+    "app.signer": {
       "name": "app.signer",
       "description": "Records app signers.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.signer` LIMIT 1;",
@@ -792,7 +792,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "app_user": {
+    "app.user": {
       "name": "app.user",
       "description": "Records app users.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.app.user` LIMIT 1;",
@@ -804,7 +804,7 @@ export const protocolTablesSchemas = {
           { "name": "last_action_on", "type": "timestamp with time zone", "description": "Last action time" }
       ]
     },
-    "feed_metadata": {
+    "feed.metadata": {
       "name": "feed.metadata",
       "description": "Stores feed metadata.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.feed.metadata` LIMIT 1;",
@@ -820,7 +820,7 @@ export const protocolTablesSchemas = {
           { "name": "created_on", "type": "timestamp with time zone", "description": "Creation time" }
       ]
     },
-    "feed_record": {
+    "feed.record": {
       "name": "feed.record",
       "description": "Stores feed records.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.feed.record` LIMIT 1;",
@@ -833,7 +833,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "feed_record_stats": {
+    "feed.record_stats": {
       "name": "feed.record_stats",
       "description": "Records feed usage statistics.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.feed.record_stats` LIMIT 1;",
@@ -843,7 +843,7 @@ export const protocolTablesSchemas = {
           { "name": "used_by_apps_total", "type": "integer", "description": "Total app usage count" }
       ]
     },
-    "graph_metadata": {
+    "graph.metadata": {
       "name": "graph.metadata",
       "description": "Stores graph metadata.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.graph.metadata` LIMIT 1;",
@@ -859,7 +859,7 @@ export const protocolTablesSchemas = {
           { "name": "created_on", "type": "timestamp with time zone", "description": "Creation time" }
       ]
     },
-    "graph_record": {
+    "graph.record": {
       "name": "graph.record",
       "description": "Stores graph records.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.graph.record` LIMIT 1;",
@@ -872,7 +872,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "graph_record_stats": {
+    "graph.record_stats": {
       "name": "graph.record_stats",
       "description": "Records graph usage statistics.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.graph.record_stats` LIMIT 1;",
@@ -882,7 +882,7 @@ export const protocolTablesSchemas = {
           { "name": "used_by_apps_total", "type": "integer", "description": "Total app usage count" }
       ]
     },
-    "group_banned": {
+    "group.banned": {
       "name": "group.banned",
       "description": "Records banned group members.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.group.banned` LIMIT 1;",
@@ -899,7 +899,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "group_member": {
+    "group.member": {
       "name": "group.member",
       "description": "Records group members.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.group.member` LIMIT 1;",
@@ -914,7 +914,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "group_membership_approval_requests": {
+    "group.membership_approval_requests": {
       "name": "group.membership_approval_requests",
       "description": "Records membership approval requests.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.group.membership_approval_requests` LIMIT 1;",
@@ -930,7 +930,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "group_metadata": {
+    "group.metadata": {
       "name": "group.metadata",
       "description": "Stores group metadata.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.group.metadata` LIMIT 1;",
@@ -947,7 +947,7 @@ export const protocolTablesSchemas = {
           { "name": "created_on", "type": "timestamp with time zone", "description": "Creation time" }
       ]
     },
-    "group_record": {
+    "group.record": {
       "name": "group.record",
       "description": "Stores group records.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.group.record` LIMIT 1;",
@@ -960,7 +960,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "group_record_stats": {
+    "group.record_stats": {
       "name": "group.record_stats",
       "description": "Stores group statistics.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.group.record_stats` LIMIT 1;",
@@ -970,7 +970,7 @@ export const protocolTablesSchemas = {
           { "name": "members_total", "type": "integer", "description": "Total number of members" }
       ]
     },
-    "metadata_failed": {
+    "metadata.failed": {
       "name": "metadata.failed",
       "description": "Records failed metadata processing. Previous was publication.failed in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.metadata.failed` LIMIT 1;",
@@ -992,7 +992,7 @@ export const protocolTablesSchemas = {
           { "name": "action", "type": "bytea", "description": "Related action identifier" }
       ]
     },
-    "metadata_pending": {
+    "metadata.pending": {
       "name": "metadata.pending",
       "description": "Records pending metadata processing. Previous was publication.pending in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.metadata.pending` LIMIT 1;",
@@ -1014,7 +1014,7 @@ export const protocolTablesSchemas = {
           { "name": "action", "type": "bytea", "description": "Related action identifier" }
       ]
     },
-    "metadata_refresh": {
+    "metadata.refresh": {
       "name": "metadata.refresh",
       "description": "Tracks metadata refresh requests.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.metadata.refresh` LIMIT 1;",
@@ -1028,7 +1028,7 @@ export const protocolTablesSchemas = {
           { "name": "created_at", "type": "timestamp with time zone", "description": "Creation time" }
       ]
     },
-    "ml_account_score": {
+    "ml.account_score": {
       "name": "ml.account_score",
       "description": "Records quality scores for accounts. Previous was machine_learning.quality_profiles in Lens V2. Quality score used to be [0 - 10000] in V2. In V3, score is rescaled to [0 - 100] with 2 decimal point decision",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.ml.account_score` LIMIT 1;",
@@ -1039,7 +1039,7 @@ export const protocolTablesSchemas = {
           { "name": "generated_at", "type": "timestamp with time zone", "description": "Score generation time" }
       ]
     },
-    "ml_for_you_global_timeline": {
+    "ml.for_you_global_timeline": {
       "name": "ml.for_you_global_timeline",
       "description": "Stores data for personalized \"For You\" feeds. Previous was machine_learning.for_you_global_feed in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.ml.for_you_global_timeline` LIMIT 1;",
@@ -1052,7 +1052,7 @@ export const protocolTablesSchemas = {
           { "name": "generated_at", "type": "timestamp with time zone", "description": "Generation time" }
       ]
     },
-    "ml_popularity_trending_timeline": {
+    "ml.popularity_trending_timeline": {
       "name": "ml.popularity_trending_timeline",
       "description": "Tracks trending posts based on popularity. Previous was machine_learning.popularity_trending_feed in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.ml.popularity_trending_timeline` LIMIT 1;",
@@ -1064,7 +1064,7 @@ export const protocolTablesSchemas = {
           { "name": "generated_at", "type": "timestamp with time zone", "description": "Generation time" }
       ]
     },
-    "ml_reply_ranking": {
+    "ml.reply_ranking": {
       "name": "ml.reply_ranking",
       "description": "Ranks replies for improved display. Previous was machine_learning.reply_ranking in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.ml.reply_ranking` LIMIT 1;",
@@ -1076,7 +1076,7 @@ export const protocolTablesSchemas = {
           { "name": "generated_at", "type": "timestamp with time zone", "description": "Generation time" }
       ]
     },
-    "post_account_mention": {
+    "post.account_mention": {
       "name": "post.account_mention",
       "description": "Records account mentions in posts.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.account_mention` LIMIT 1;",
@@ -1091,7 +1091,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "post_action": {
+    "post.action": {
       "name": "post.action",
       "description": "Records post actions. Previous was publication.open_action_module_multirecipient in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.action` LIMIT 1;",
@@ -1116,7 +1116,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "post_action_config": {
+    "post.action_config": {
       "name": "post.action_config",
       "description": "Stores post action configurations.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.action_config` LIMIT 1;",
@@ -1141,7 +1141,7 @@ export const protocolTablesSchemas = {
           { "name": "collect_nft_address", "type": "bytea", "description": "Collect NFT address" }
       ]
     },
-    "post_action_executed": {
+    "post.action_executed": {
       "name": "post.action_executed",
       "description": "Records executed post actions.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.action_executed` LIMIT 1;",
@@ -1160,7 +1160,7 @@ export const protocolTablesSchemas = {
           { "name": "account", "type": "bytea", "description": "Executing account" }
       ]
     },
-    "post_action_executed_by_account_count": {
+    "post.action_executed_by_account_count": {
       "name": "post.action_executed_by_account_count",
       "description": "Counts actions executed by accounts on posts.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.action_executed_by_account_count` LIMIT 1;",
@@ -1172,7 +1172,7 @@ export const protocolTablesSchemas = {
           { "name": "total", "type": "integer", "description": "Execution count" }
       ]
     },
-    "post_action_executed_count": {
+    "post.action_executed_count": {
       "name": "post.action_executed_count",
       "description": "Counts actions executed on posts.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.action_executed_count` LIMIT 1;",
@@ -1183,7 +1183,7 @@ export const protocolTablesSchemas = {
           { "name": "total", "type": "integer", "description": "Execution count" }
       ]
     },
-    "post_action_metadata": {
+    "post.action_metadata": {
       "name": "post.action_metadata",
       "description": "Stores metadata for post actions.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.action_metadata` LIMIT 1;",
@@ -1199,7 +1199,7 @@ export const protocolTablesSchemas = {
           { "name": "created_on", "type": "timestamp with time zone", "description": "Creation time" }
       ]
     },
-    "post_extra_data": {
+    "post.extra_data": {
       "name": "post.extra_data",
       "description": "Stores extra data for posts.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.extra_data` LIMIT 1;",
@@ -1216,7 +1216,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "post_feed_tag_summary": {
+    "post.feed_tag_summary": {
       "name": "post.feed_tag_summary",
       "description": "Summarizes post tags by feed.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.feed_tag_summary` LIMIT 1;",
@@ -1227,7 +1227,7 @@ export const protocolTablesSchemas = {
           { "name": "total", "type": "integer", "description": "Usage count" }
       ]
     },
-    "post_group_mention": {
+    "post.group_mention": {
       "name": "post.group_mention",
       "description": "Records group mentions in posts.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.group_mention` LIMIT 1;",
@@ -1240,7 +1240,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "post_hashtag": {
+    "post.hashtag": {
       "name": "post.hashtag",
       "description": "Records hashtags used in posts. Previous was publication.hashtag in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.hashtag` LIMIT 1;",
@@ -1250,7 +1250,7 @@ export const protocolTablesSchemas = {
           { "name": "hashtag", "type": "character varying", "description": "Hashtag text" }
       ]
     },
-    "post_metadata": {
+    "post.metadata": {
       "name": "post.metadata",
       "description": "Stores post metadata. Previous was publication.metadata in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.metadata` LIMIT 1;",
@@ -1272,7 +1272,7 @@ export const protocolTablesSchemas = {
           { "name": "app", "type": "bytea", "description": "App identifier" }
       ]
     },
-    "post_metadata_edited": {
+    "post.metadata_edited": {
       "name": "post.metadata_edited",
       "description": "Records edited post metadata.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.metadata_edited` LIMIT 1;",
@@ -1294,7 +1294,7 @@ export const protocolTablesSchemas = {
           { "name": "created_at", "type": "timestamp with time zone", "description": "Edit time" }
       ]
     },
-    "post_reaction": {
+    "post.reaction": {
       "name": "post.reaction",
       "description": "Records reactions to posts. Previous was publication.reaction in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.reaction` LIMIT 1;",
@@ -1307,7 +1307,7 @@ export const protocolTablesSchemas = {
           { "name": "app", "type": "bytea", "description": "App identifier" }
       ]
     },
-    "post_reaction_summary": {
+    "post.reaction_summary": {
       "name": "post.reaction_summary",
       "description": "Summarizes reactions to posts. Previous was global_stats.publication_reaction in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.reaction_summary` LIMIT 1;",
@@ -1318,7 +1318,7 @@ export const protocolTablesSchemas = {
           { "name": "total", "type": "integer", "description": "Reaction count" }
       ]
     },
-    "post_record": {
+    "post.record": {
       "name": "post.record",
       "description": "Stores post records. Previous was publication.record in Lens V2. Corresponding clustered table post.record_clustered_by_account is available for better performance on account column.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.record` LIMIT 1;",
@@ -1346,7 +1346,7 @@ export const protocolTablesSchemas = {
           { "name": "slug", "type": "character varying", "description": "URL slug" }
       ]
     },
-    "post_rule_config": {
+    "post.rule_config": {
       "name": "post.rule_config",
       "description": "Stores post rule configurations.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.rule_config` LIMIT 1;",
@@ -1365,7 +1365,7 @@ export const protocolTablesSchemas = {
           { "name": "last_updated_sequence_id", "type": "numeric", "description": "Last update sequence ID" }
       ]
     },
-    "post_rule_selector": {
+    "post.rule_selector": {
       "name": "post.rule_selector",
       "description": "Stores post rule selectors.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.rule_selector` LIMIT 1;",
@@ -1382,7 +1382,7 @@ export const protocolTablesSchemas = {
           { "name": "rule_address", "type": "bytea", "description": "Rule address" }
       ]
     },
-    "post_summary": {
+    "post.summary": {
       "name": "post.summary",
       "description": "Summarizes post statistics. Previous was global_stats.publication in Lens V2. Repost/Mirros are not migrated from Lens V2. Total_reposts may not represent the actual numbers from Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.summary` LIMIT 1;",
@@ -1408,7 +1408,7 @@ export const protocolTablesSchemas = {
           { "name": "total_amount_of_tips_by_flagged_accounts", "type": "integer", "description": "Tips by flagged accounts" }
       ]
     },
-    "post_tag": {
+    "post.tag": {
       "name": "post.tag",
       "description": "Records tags used in posts. Previous was publication.tag in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.tag` LIMIT 1;",
@@ -1421,7 +1421,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "post_tag_summary": {
+    "post.tag_summary": {
       "name": "post.tag_summary",
       "description": "Summarizes tag usage. Previous was global_stats.publication_tag in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.tag_summary` LIMIT 1;",
@@ -1431,7 +1431,7 @@ export const protocolTablesSchemas = {
           { "name": "total", "type": "integer", "description": "Usage count" }
       ]
     },
-    "post_universal_action_config": {
+    "post.universal_action_config": {
       "name": "post.universal_action_config",
       "description": "Stores universal action configurations for posts.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.post.universal_action_config` LIMIT 1;",
@@ -1446,7 +1446,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "rule_config": {
+    "rule.config": {
       "name": "rule.config",
       "description": "Stores rule configurations.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.rule.config` LIMIT 1;",
@@ -1464,7 +1464,7 @@ export const protocolTablesSchemas = {
           { "name": "last_updated_sequence_id", "type": "numeric", "description": "Last update sequence ID" }
       ]
     },
-    "rule_selector": {
+    "rule.selector": {
       "name": "rule.selector",
       "description": "Stores rule selectors.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.rule.selector` LIMIT 1;",
@@ -1480,7 +1480,7 @@ export const protocolTablesSchemas = {
           { "name": "rule_address", "type": "bytea", "description": "Rule address" }
       ]
     },
-    "sponsorship_exclusive": {
+    "sponsorship.exclusive": {
       "name": "sponsorship.exclusive",
       "description": "Records exclusive sponsorships.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.sponsorship.exclusive` LIMIT 1;",
@@ -1496,7 +1496,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "sponsorship_funds_spent": {
+    "sponsorship.funds_spent": {
       "name": "sponsorship.funds_spent",
       "description": "Records spent sponsorship funds.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.sponsorship.funds_spent` LIMIT 1;",
@@ -1512,7 +1512,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "sponsorship_grant_given": {
+    "sponsorship.grant_given": {
       "name": "sponsorship.grant_given",
       "description": "Records sponsorship grants.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.sponsorship.grant_given` LIMIT 1;",
@@ -1530,7 +1530,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "sponsorship_metadata": {
+    "sponsorship.metadata": {
       "name": "sponsorship.metadata",
       "description": "Stores sponsorship metadata.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.sponsorship.metadata` LIMIT 1;",
@@ -1546,7 +1546,7 @@ export const protocolTablesSchemas = {
           { "name": "created_on", "type": "timestamp with time zone", "description": "Creation time" }
       ]
     },
-    "sponsorship_rate_limit": {
+    "sponsorship.rate_limit": {
       "name": "sponsorship.rate_limit",
       "description": "Records sponsorship rate limits.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.sponsorship.rate_limit` LIMIT 1;",
@@ -1565,7 +1565,7 @@ export const protocolTablesSchemas = {
           { "name": "last_updated_sequence_id", "type": "numeric", "description": "Last update sequence ID" }
       ]
     },
-    "sponsorship_record": {
+    "sponsorship.record": {
       "name": "sponsorship.record",
       "description": "Stores sponsorship records.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.sponsorship.record` LIMIT 1;",
@@ -1580,7 +1580,7 @@ export const protocolTablesSchemas = {
           { "name": "paused_last_updated_sequence_id", "type": "numeric", "description": "Pause update sequence ID" }
       ]
     },
-    "sponsorship_signer": {
+    "sponsorship.signer": {
       "name": "sponsorship.signer",
       "description": "Records sponsorship signers.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.sponsorship.signer` LIMIT 1;",
@@ -1597,7 +1597,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "username_metadata": {
+    "username.metadata": {
       "name": "username.metadata",
       "description": "Stores username namespace metadata.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.username.metadata` LIMIT 1;",
@@ -1613,7 +1613,7 @@ export const protocolTablesSchemas = {
           { "name": "created_on", "type": "timestamp with time zone", "description": "Creation time" }
       ]
     },
-    "username_namespace_record": {
+    "username.namespace_record": {
       "name": "username.namespace_record",
       "description": "Records username namespaces. Previous was namespace.record in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.username.namespace_record` LIMIT 1;",
@@ -1627,7 +1627,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "username_namespace_record_stats": {
+    "username.namespace_record_stats": {
       "name": "username.namespace_record_stats",
       "description": "Records namespace statistics.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.username.namespace_record_stats` LIMIT 1;",
@@ -1637,7 +1637,7 @@ export const protocolTablesSchemas = {
           { "name": "usernames_total", "type": "integer", "description": "Total usernames count" }
       ]
     },
-    "username_record": {
+    "username.record": {
       "name": "username.record",
       "description": "Stores username records. Previous was namespace.handle in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.username.record` LIMIT 1;",
@@ -1657,7 +1657,7 @@ export const protocolTablesSchemas = {
           { "name": "last_transfer_updated_sequence_id", "type": "numeric", "description": "Last transfer sequence ID" }
       ]
     },
-    "username_reserved": {
+    "username.reserved": {
       "name": "username.reserved",
       "description": "Records reserved usernames.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.username.reserved` LIMIT 1;",
@@ -1673,7 +1673,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "currencies_record": {
+    "currencies.record": {
       "name": "currencies.record",
       "description": "Records supported currencies. Previous was enabled.currency in Lens V2",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.currencies.record` LIMIT 1;",
@@ -1691,7 +1691,7 @@ export const protocolTablesSchemas = {
           { "name": "sequence_id", "type": "numeric", "description": "Sequence identifier" }
       ]
     },
-    "transaction_known_transactions": {
+    "transaction.known_transactions": {
       "name": "transaction.known_transactions",
       "description": "Records known transactions.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.transaction.known_transactions` LIMIT 1;",
@@ -1708,7 +1708,7 @@ export const protocolTablesSchemas = {
           { "name": "dependencies_operations", "type": "JSON", "description": "Dependent operations" }
       ]
     },
-    "extra_data_record": {
+    "extra_data.record": {
       "name": "extra_data.record",
       "description": "Stores extra data records.",
       "mainnet_query": "SELECT * FROM `lens-protocol-mainnet.extra_data.record` LIMIT 1;",

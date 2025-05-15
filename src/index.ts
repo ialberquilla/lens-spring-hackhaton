@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-import { executeAgent } from './agent';
+import { executeAgent } from './agent.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -22,7 +22,7 @@ if (!fs.existsSync(filePath)) {
   }
 
 
-const result = await executeAgent('Hello, how are you?');
-console.log(result);
+const result = await executeAgent('Hello, How token transfers of $GRASS in the last 24 hours?');
+console.log(result.messages[result.messages.length - 1].content);
 
 

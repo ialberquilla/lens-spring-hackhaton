@@ -11,6 +11,7 @@ export const sendQuery = async (query: string, params?: object) => {
       query: query,
       params
     };
+    
     const [job] = await bigquery.createQueryJob(options);
     const [rows] = await job.getQueryResults();
     return rows;

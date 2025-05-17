@@ -1,0 +1,4 @@
+[submodule "eliza-server"]
+	path = eliza-server
+	url = https://github.com/ialberquilla/eliza
+	branch = client-bonsai

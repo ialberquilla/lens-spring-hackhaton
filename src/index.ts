@@ -28,21 +28,42 @@ const app = express();
 
 app.get('/message', async (req: express.Request, res: express.Response) => {
     const message = req.query.message as string;
+
     const result = await executeAgent(message) as { messages: Array<{ content: string }> };
 
     console.log({ message: result.messages[result.messages.length - 1].content });
 
     const cleanResult = result.messages[result.messages.length - 1].content.replace(/```json\n/, '').replace(/\n```/, '');
 
-    const response = JSON.parse(cleanResult);
+    let response;
+    try {
+        const firstBrace = cleanResult.indexOf('{');
+        const lastBrace = cleanResult.lastIndexOf('}');
+        if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+            const jsonString = cleanResult.substring(firstBrace, lastBrace + 1);
+            response = JSON.parse(jsonString);
+        } else {
+            console.error("Could not find valid JSON in the agent's response:", cleanResult);
+            throw new Error("Agent response did not contain a parseable JSON object.");
+        }
+    } catch (e) {
+        console.error("Failed to parse JSON from agent response:", cleanResult, e);
+        res.status(500).json({ error: "Failed to parse agent response", details: cleanResult });
+        return;
+    }
 
     res.json(response);
 });
 
-app.listen(3000, () => {
+const server = app.listen(3005, () => {
     console.log('Server is running on port 3000');
 });
 
+server.on('close', () => {
+    console.log('HTTP server closed');
+});
+
 } catch (error) {
-    console.error(error);
+    console.error("Error during application startup:", error);
+    process.exit(1);
 }

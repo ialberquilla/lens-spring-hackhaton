@@ -2,3 +2,6 @@
 	path = eliza-server
 	url = https://github.com/ialberquilla/eliza
 	branch = client-bonsai
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/ialberquilla/bonsai-studio

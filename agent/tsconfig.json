@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "ESNext",
+    "module": "NodeNext",
     "moduleResolution": "nodenext",
     "outDir": "./dist",
-    "rootDir": "agent/src",
+    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -15,7 +15,7 @@
     "experimentalSpecifierResolution": "node"
   },
   "include": [
-    "agent/src/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",

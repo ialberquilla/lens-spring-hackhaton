@@ -56,7 +56,7 @@ app.get('/message', async (req: express.Request, res: express.Response) => {
 });
 
 const server = app.listen(3005, () => {
-    console.log('Server is running on port 3000');
+    console.log('Server is running on port 3005');
 });
 
 server.on('close', () => {

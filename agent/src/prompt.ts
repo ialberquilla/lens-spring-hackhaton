@@ -42,13 +42,13 @@ export const SYSTEM_PROMPT =
                 *   **CRITICAL ERROR: "No matching signature for operator >= for argument types: DATETIME, TIMESTAMP" (or a similar message for other comparison operators like <, <=, >, or involving DATETIME and TIMESTAMP):**
                     1.  **STOP. This is a BigQuery DATETIME vs TIMESTAMP type mismatch.**
                     2.  **IMMEDIATE ACTION: You MUST modify YOUR FAILED QUERY.** Do not try the same query again.
-                    3.  **Look at YOUR FAILED QUERY. Find the comparison like \`column_name >= expression\` (or with <, <=, >).**
-                    4.  **Consult the table schema (e.g., using \`chainTablesSchemaTool\` or \`protocolTablesSchemaTool\`) for the table containing \`column_name\` to confirm its type. Assume the expression involving \`CURRENT_TIMESTAMP()\` or \`TIMESTAMP_SUB()\` is of type TIMESTAMP.**
-                    5.  **If \`column_name\` is confirmed to be DATETIME (and the other side is TIMESTAMP):**
-                        *   **The ONLY fix to apply is to cast the DATETIME column to TIMESTAMP.**
-                        *   **Rewrite that specific part of YOUR FAILED QUERY.** For example, if your query had \`... WHERE tr.timestamp >= TIMESTAMP_SUB(...) ...\` and \`tr.timestamp\` is DATETIME, you MUST change it to \`... WHERE CAST(tr.timestamp AS TIMESTAMP) >= TIMESTAMP_SUB(...) ...\`.
-                    6.  **Apply this EXACT modification to YOUR FAILED QUERY to create the new, corrected query.**
-                    7.  **Then, and only then, proceed to retry the \`executeQueryTool\` ONCE using this new, corrected query, as per step 3 below. This is your single allowed retry for this specific error.**
+                    3.  **Look at YOUR FAILED QUERY. Find the comparison like \`column_name >= expression\` (or with <, <=, >).** The \`expression\` part will typically involve \`CURRENT_TIMESTAMP()\` or \`TIMESTAMP_SUB(...)\` which are of type TIMESTAMP. The \`column_name\` is the one that needs attention.
+                    4.  **Crucial Fix Strategy:** This error message indicates that BigQuery is treating \`column_name\` as DATETIME and the \`expression\` as TIMESTAMP (or vice-versa, but usually it's the column that is DATETIME-like).
+                        *   **Even if your schema tool reported \`column_name\` as type TIMESTAMP, this error means a direct comparison failed due to an underlying type incompatibility that BigQuery detected as DATETIME vs TIMESTAMP.**
+                        *   **The ONLY fix to apply is to cast the \`column_name\` to TIMESTAMP.**
+                        *   **Rewrite that specific part of YOUR FAILED QUERY.** For example, if your query had \`... WHERE tr.timestamp >= TIMESTAMP_SUB(...) ...\` and this error occurred, you MUST change it to \`... WHERE CAST(tr.timestamp AS TIMESTAMP) >= TIMESTAMP_SUB(...) ...\`.
+                    5.  **Apply this EXACT modification to YOUR FAILED QUERY to create the new, corrected query.**
+                    6.  **Then, and only then, proceed to retry the \`executeQueryTool\` ONCE using this new, corrected query, as per step 3 below. This is your single allowed retry for this specific error.**
                 *   **CRITICAL ERROR: "TIMESTAMP_SUB does not support the MONTH date part when the argument is TIMESTAMP type" (or YEAR part):**
                     1.  **STOP. This is a BigQuery \`TIMESTAMP_SUB\` misuse with \`MONTH\` or \`YEAR\` parts.**
                     2.  **IMMEDIATE ACTION: You MUST modify YOUR FAILED QUERY.** Do not try the same query again.

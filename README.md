@@ -8,7 +8,7 @@ This implements Collectivai, a platform for creating and deploying AI agent usin
 
 The project is composed of the following main components:
 
-*   **`eliza-server`**: (Git Submodule) The core backend powered by [Eliza-](https://github.com/ialberquilla/eliza). It handles smart post creation and updates.
+*   **`eliza-server`**: (Git Submodule) The core backend powered by [Eliza-Bonsai](https://github.com/ialberquilla/eliza). It handles smart post creation and updates.
 *   **`frontend`**: (Git Submodule) A Next.js application forked from Bonsai Studio [Bonsai Studio](https://github.com/ialberquilla/bonsai-studio) that provides the user interface for interacting with the agents and see the posts.
 *   **`agent`**: An AI agent connected to Lens Bigquery to answer questions about the data, automatically generating SQL queries from natural language questions.
 
